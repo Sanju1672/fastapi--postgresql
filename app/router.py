@@ -35,5 +35,7 @@ async def update_book(request: RequestBook ,db:Session = Depends(get_db)):
     _book =crud.update_book(db,book_id=request.parameter.id, title= request.parameter.title, author= request.parameter.author,publishedyear= request.parameter.publishedyear)
     return Response(code=200 , status="ok", message="Book updated successfully",result= _book)
 
-
-
+@router.delete("/{id}")
+async def delete(id:int, db: Session = Depends(get_db)):
+    crud.remove_book(db, book_id=id)
+    return Response(code= 200,status="ok", message="Book deleted successfully").dict(exclude_none=True)
