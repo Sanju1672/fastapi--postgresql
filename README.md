@@ -3,6 +3,9 @@
 *Activating the Python virtual environment - command for execution
    ".\venv\Scripts\activate" 
 
+*Incase of errors while activating the Python virtual environment - command for execution
+   "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser"
+
 *Executing the code - command for execution
    "uvicorn main:app --reload"
 
