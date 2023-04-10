@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from model import Book
 from schemas import BookSchema
 
-def get_book(db:Session,skip:int=0, limit:int=20)
+def get_book(db:Session,skip:int=0, limit:int=20):
   return db.query(Book).offset(skip).limit(limit).all()
 
 def get_book_by_id(db:Session,book_id: int):
